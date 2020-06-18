@@ -8,7 +8,7 @@ import LinkListItem from "../../../components/LinkListItem/LinkListItem";
 const externalLinks = [
   {
     name: "Github",
-    link: "#",
+    link: "https://github.com/aliberkinsahin/react-search-movies",
     icon: <GitHubIcon />,
   },
   {
