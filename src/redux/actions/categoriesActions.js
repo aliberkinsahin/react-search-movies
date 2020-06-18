@@ -48,3 +48,8 @@ export const setScrollToTop = () => {
     type: actionTypes.SET_SCROLL_TO_TOP
   }
 }
+export const resetScrollToTop = () => {
+  return {
+    type: actionTypes.RESET_SCROLL_TO_TOP
+  }
+}

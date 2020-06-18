@@ -39,5 +39,6 @@ export {
   getDiscoverCategory,
   setDiscoverCategory,
   discoverCategoryFailed,
-  setScrollToTop
+  setScrollToTop,
+  resetScrollToTop
 } from "./categoriesActions"

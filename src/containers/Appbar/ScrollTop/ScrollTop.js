@@ -1,5 +1,6 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useCallback } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import * as actions from "../../../redux/actions";
 import useStyles from "./styles";
 import { useScrollTrigger, Zoom } from "@material-ui/core";
 
@@ -13,16 +14,21 @@ export default function ScrollTop(props) {
     return state.categories.scrollToTop;
   });
 
+  const dispatch = useDispatch();
+  const resetScrollTrigger = useCallback(
+    () => dispatch(actions.resetScrollToTop()),
+    [dispatch]
+  );
+
   const handleScroll = () => {
-    const anchor = (document).querySelector(
-      "#back-to-top-anchor"
-    );
+    const anchor = document.querySelector("#back-to-top-anchor");
     if (anchor) {
       anchor.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   };
   if (scrollTriggerExternal) {
-    handleScroll()
+    handleScroll();
+    resetScrollTrigger()
   }
 
   return (

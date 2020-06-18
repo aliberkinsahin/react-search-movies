@@ -42,6 +42,10 @@ const reducer = (state = initialState, action) => {
       return updateObject(state, {
         scrollToTop: true,
       });
+    case actionTypes.RESET_SCROLL_TO_TOP:
+      return updateObject(state, {
+        scrollToTop: false,
+      });
 
     default:
       return state;
